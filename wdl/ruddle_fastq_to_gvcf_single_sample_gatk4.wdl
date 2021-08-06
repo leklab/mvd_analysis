@@ -226,7 +226,7 @@ workflow Fastq_to_Gvcf_GATK4 {
 
   # Outputs that will be retained when execution is complete  
   output {
-    Array[File] unmapped_bam = FastqToUbam.unmapped_bam
+    #Array[File] unmapped_bam = FastqToUbam.unmapped_bam
     File duplication_metrics = MarkDuplicates.duplicate_metrics
     File bqsr_report = GatherBqsrReports.output_bqsr_report
     File analysis_ready_bam = GatherBamFiles.output_bam

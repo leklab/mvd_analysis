@@ -83,7 +83,7 @@ workflow Multisample_Fastq_to_Gvcf_GATK4 {
   }
   # Outputs that will be retained when execution is complete  
   output {
-    Array[Array[File]] unmapped_bam = Fastq_to_Gvcf_GATK4.unmapped_bam
+    #Array[Array[File]] unmapped_bam = Fastq_to_Gvcf_GATK4.unmapped_bam
     Array[File] duplication_metrics = Fastq_to_Gvcf_GATK4.duplication_metrics
     Array[File] bqsr_report = Fastq_to_Gvcf_GATK4.bqsr_report
     Array[File] analysis_ready_bam = Fastq_to_Gvcf_GATK4.analysis_ready_bam
