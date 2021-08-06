@@ -1,0 +1,4 @@
+samples_subset.txt
+cromwell-executions/
+cromwell-workflow-logs/
+slurm-*
