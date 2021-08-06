@@ -1,0 +1,11 @@
+{
+	"final_workflow_outputs_dir": "/home/ml2529/scratch60/gruber_test/output",
+	"final_workflow_log_dir": "/home/ml2529/scratch60/gruber_test/output",
+	"final_call_logs_dir": "/home/ml2529/scratch60/gruber_test/output",
+	"delete_intermediate_output_files": true,
+	"use_relative_output_paths": true,
+	"write_to_cache": true,
+	"read_from_cache": true
+
+}
+
