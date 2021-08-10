@@ -6,6 +6,6 @@
 
 java -Dconfig.file=wdl/slurm.conf -jar \
 /gpfs/ycga/project/lek/shared/tools/jars/cromwell-56.jar run \
-scripts/Multisample_jointgt_GATK4.wdl \
--i scripts/Multisample_jointgt_GATK4_inputs_hg38.json \
+wdl/Multisample_jointgt_GATK4.wdl \
+-i wdl/Multisample_jointgt_GATK4_inputs_hg38.json \
 -o wdl/cromwell.options

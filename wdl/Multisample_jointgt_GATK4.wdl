@@ -513,9 +513,9 @@ task IndelsVariantRecalibrator {
       -an ${sep=' -an ' recalibration_annotation_values} \
       -mode INDEL \
       --max-gaussians 4 \
-      -resource mills,known=false,training=true,truth=true,prior=12:${mills_resource_vcf} \
-      -resource axiomPoly,known=false,training=true,truth=false,prior=10:${axiomPoly_resource_vcf} \
-      -resource dbsnp,known=true,training=false,truth=false,prior=2:${dbsnp_resource_vcf}
+      --resource:mills,known=false,training=true,truth=true,prior=12 ${mills_resource_vcf} \
+      --resource:axiomPoly,known=false,training=true,truth=false,prior=10 ${axiomPoly_resource_vcf} \
+      --resource:dbsnp,known=true,training=false,truth=false,prior=2 ${dbsnp_resource_vcf}
   }
   runtime {
     cpus: 8
@@ -563,10 +563,10 @@ task SNPsVariantRecalibratorCreateModel {
       --sample-every-Nth-variant ${downsampleFactor} \
       --output-model ${model_report_filename} \
       --max-gaussians 6 \
-      -resource hapmap,known=false,training=true,truth=true,prior=15:${hapmap_resource_vcf} \
-      -resource omni,known=false,training=true,truth=true,prior=12:${omni_resource_vcf} \
-      -resource 1000G,known=false,training=true,truth=false,prior=10:${one_thousand_genomes_resource_vcf} \
-      -resource dbsnp,known=true,training=false,truth=false,prior=7:${dbsnp_resource_vcf}
+      --resource:hapmap,known=false,training=true,truth=true,prior=15 ${hapmap_resource_vcf} \
+      --resource:omni,known=false,training=true,truth=true,prior=12 ${omni_resource_vcf} \
+      --resource:1000G,known=false,training=true,truth=false,prior=10 ${one_thousand_genomes_resource_vcf} \
+      --resource:dbsnp,known=true,training=false,truth=false,prior=7 ${dbsnp_resource_vcf}
   }
   runtime {
     cpus: 8
@@ -610,10 +610,10 @@ task SNPsVariantRecalibrator {
       -mode SNP \
       ${"--input-model " + model_report + " --output-tranches-for-scatter "} \
       --max-gaussians 6 \
-      -resource hapmap,known=false,training=true,truth=true,prior=15:${hapmap_resource_vcf} \
-      -resource omni,known=false,training=true,truth=true,prior=12:${omni_resource_vcf} \
-      -resource 1000G,known=false,training=true,truth=false,prior=10:${one_thousand_genomes_resource_vcf} \
-      -resource dbsnp,known=true,training=false,truth=false,prior=7:${dbsnp_resource_vcf}
+      --resource:hapmap,known=false,training=true,truth=true,prior=15 ${hapmap_resource_vcf} \
+      --resource:omni,known=false,training=true,truth=true,prior=12 ${omni_resource_vcf} \
+      --resource:1000G,known=false,training=true,truth=false,prior=10 ${one_thousand_genomes_resource_vcf} \
+      --resource:dbsnp,known=true,training=false,truth=false,prior=7 ${dbsnp_resource_vcf}
   }
   runtime {
     cpus: 4
@@ -715,7 +715,7 @@ task GatherVcfs {
 
     gatk --java-options "-Xmx6g -Xms6g" \
     IndexFeatureFile \
-    --feature-file ${output_vcf_name}
+    -I ${output_vcf_name}
   >>>
   runtime {
     cpus: 4
