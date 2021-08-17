@@ -1,0 +1,10 @@
+{
+  "bam_QC.contam_vcf": "/gpfs/ycga/project/ysm/lek/shared/resources/hg38/WholeGenomeShotgunContam.vcf",
+  "bam_QC.verify_bamid": "/gpfs/ycga/project/ysm/lek/ml2529/bin/verifyBamID",
+  "bam_QC.ref": "/gpfs/ycga/project/ysm/lek/shared/resources/hg38/Homo_sapiens_assembly38.fasta",
+  "bam_QC.bam_dir": "/home/njl27/scratch60/gruber_exomes/processed_files",
+  "bam_QC.targets": "/gpfs/ycga/project/ysm/lek/shared/resources/hg38/exome_evaluation_regions.v1.interval_list",
+  "bam_QC.picard": "$EBROOTPICARD/picard.jar",
+  "bam_QC.inputSamplesFile": "processed_files/uniq_samples.list",
+  "bam_QC.bam_suffix": ".hg38.bam"
+}
